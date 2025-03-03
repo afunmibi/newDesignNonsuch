@@ -1,0 +1,35 @@
+database for login system
+
+database name nonsuch_portal
+CREATE TABLE IF NOT EXISTS login (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+  	usertype ENUM('user', 'admin') NOT NULL,
+    staff_no VARCHAR(30) NOT NULL
+);
+
+
+database for enrolment form
+CREATE DATABASE IF NOT EXISTS nonsuch_portal;
+
+
+CREATE TABLE IF NOT EXISTS enrolment (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    organization VARCHAR(100) NOT NULL,
+    sname VARCHAR(50) NOT NULL,
+    oname VARCHAR(50) NOT NULL,
+    policy_no VARCHAR(50) NOT NULL,
+    phone_no VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    provider VARCHAR(50) NOT NULL,
+    gender ENUM('Male', 'Female') NOT NULL,
+    plan_type ENUM('Gold', 'Silver', 'Platinum') NOT NULL,
+    location VARCHAR(100) NOT NULL,
+    dob DATE NOT NULL,
+    no_of_dependant INT NOT NULL,
+    reg_status ENUM('active', 'inactive') NOT NULL,
+    alternate_no VARCHAR(20),
+    date_captured DATETIME NOT NULL,
+    photo VARCHAR(255) NOT NULL
+);
