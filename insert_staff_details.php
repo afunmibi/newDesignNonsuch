@@ -19,7 +19,7 @@ if (!move_uploaded_file($file_tmp, $store)) {
 }else{
 
 $sql = "insert into login (username, password, usertype, staff_id, photo) values ('$username','$password','$usertype', '$staff_id', '$file_name' )";
-		$result = mysqli_query($con, $sql);
+$result = mysqli_query($con, $sql);
  
  if ($result) {
  	echo 'Data inserted';
@@ -73,6 +73,7 @@ $sql = "insert into login (username, password, usertype, staff_id, photo) values
 	</style>
 </head>
 <body>
+<?php include('header.php') ;?>
 	<div class="wrapper_staff">
 		<form action="#" method="post" enctype="multipart/form-data">
 			<h3>Staff Portal Registration</h3> <a href="index.php">Back to Login</a>

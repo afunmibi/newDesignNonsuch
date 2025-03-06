@@ -33,3 +33,23 @@ CREATE TABLE IF NOT EXISTS enrolment (
     date_captured DATETIME NOT NULL,
     photo VARCHAR(255) NOT NULL
 );
+
+
+//enrolllees_log_in_request
+CREATE TABLE enrollees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name_of_enrollee VARCHAR(255) NOT NULL,
+    nhia_no VARCHAR(20),
+    sex VARCHAR(10),
+    phone_no VARCHAR(20),
+    primary_hospital VARCHAR(255),
+    secondary_hospital VARCHAR(255),
+    status_position VARCHAR(20),
+    primary_hospital_code VARCHAR(20),
+    secondary_hospital_code VARCHAR(20),
+    diagnosis TEXT,
+    procedure_text TEXT,
+    dob DATE,
+    further_diagnosis TEXT
+);
+

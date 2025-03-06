@@ -27,7 +27,7 @@
 <body>
   <div class="container">
     <h1 class="text-center">Enrollee Details</h1>
-  
+    
   <a href="generate_pdf.php" class="btn btn-primary mx-3 mb-4">Generate PDF</a>
 <a href="enrolment.php" class="btn btn-primary mx-3 mb-4">Add New Enrollee</a>
   <div class="container-fluid table-responsive">
