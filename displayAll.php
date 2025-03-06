@@ -1,10 +1,6 @@
 <?php require"connection.php";
 
 
-
-// }else{
-//   echo "Record not found";
-// }
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +24,27 @@
   <div class="container">
     <h1 class="text-center">Enrollee Details</h1>
     
-  <a href="generate_pdf.php" class="btn btn-primary mx-3 mb-4">Generate PDF</a>
+<a href="generate.php" class="btn btn-primary mx-3 mb-4">Export Details</a>
 <a href="enrolment.php" class="btn btn-primary mx-3 mb-4">Add New Enrollee</a>
   <div class="container-fluid table-responsive">
+    <!-- to search  -->
+     <?php 
+     if (isset($_GET['search'])) {
+      $search = $con->real_escape_string($_GET['search']); // Sanitize input
+      $sql = "SELECT * FROM enrolment WHERE CONCAT(sname, policy_no, oname, phone_no) LIKE '%" . $search . "%'";
+      $result = $con->query($sql);
+  } else {
+      $sql = "SELECT * FROM enrolment";
+      $result = $con->query($sql);
+  }
+     ?>
+    <div class="">
+      <form action="" method="get"> 
+        <input type="text" name="my_search">
+        <input type="submit" name="search" value="Search">
+      </form>
+    </div>
+    <!-- end search -->
 <table class="table table-bordered">
   <thead>
     <tr>
