@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix-Adewale - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Felix-Adewale</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero d-flex align-items-center text-center">
+        <div class="container">
+            <div class="profile-image">
+                <img src="uploads/ProfileImage3.png" alt="Your Name" class="rounded-circle img-fluid">
+            </div>
+            <h1>Hello, I'm Felix Adewale</h1>
+            <p>I'm a <span class="typed"></span> Developer.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">My Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-item text-center">
+                        <i class="fas fa-code fa-3x mb-3"></i>
+                        <h3>Frontend Development</h3>
+                        <p>HTML, CSS, JavaScript, jQuery, React.js</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-item text-center">
+                        <i class="fas fa-database fa-3x mb-3"></i>
+                        <h3>Backend Development</h3>
+                        <p>PHP, MySQL</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-item text-center">
+                        <i class="fas fa-paint-brush fa-3x mb-3"></i>
+                        <h3>UI/UX & Frameworks</h3>
+                        <p>Bootstrap, TailwindCSS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">My Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="project-item">
+                        <img src="project1.jpg" alt="Project 1" class="img-fluid">
+                        <h3>Project 1 Title</h3>
+                        <p>Short description of Project 1.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-item">
+                        <img src="project2.jpg" alt="Project 2" class="img-fluid">
+                        <h3>Project 2 Title</h3>
+                        <p>Short description of Project 2.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-item">
+                        <img src="project3.jpg" alt="Project 3" class="img-fluid">
+                        <h3>Project 3 Title</h3>
+                        <p>Short description of Project 3.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Felix_Adewale. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Typed !== 'undefined') { // Check if Typed.js is loaded
+        var typed = new Typed('.typed', {
+            strings: ["Frontend = HTML, CSS, JavaScript, jQuery, React.js", "Backend = PHP, MySQL", "Bootstrap and TailwindCSS"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true
+        });
+    } else {
+        console.error("Typed.js library not found. Ensure it's correctly included.");
+    }
+});
+    </script>
+</body>
+</html>

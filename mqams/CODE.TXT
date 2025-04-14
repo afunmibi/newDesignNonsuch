@@ -1,0 +1,57 @@
+<?php 
+SELECT
+lei.name_of_enrollee,
+lei.nhia_no,
+lei.pa_code AS enrollee_pa_code,
+ese.id AS service_id,
+ese.name_of_services,
+ese.hcf_amount_claimed AS service_hcf_claimed,
+ese.amount_due AS service_amount_due
+FROM log_enrollees_in lei
+JOIN e_service_entry ese ON lei.pa_code = ese.pa_code;
+
+// Joining log_enrollees_in with e_drug_entry:
+SELECT
+    lei.name_of_enrollee,
+    lei.nhia_no,
+    lei.pa_code AS enrollee_pa_code,
+    ede.id AS drug_id,
+    ede.name_of_drug,
+    ede.hcf_amount_claimed AS drug_hcf_claimed,
+    ede.amount_due AS drug_amount_due
+FROM log_enrollees_in lei
+JOIN e_drug_entry ede ON lei.pa_code = ede.pa_code;
+
+// Joining log_enrollees_in with e_procedure_entry: 
+SELECT
+    lei.name_of_enrollee,
+    lei.nhia_no,
+    lei.pa_code AS enrollee_pa_code,
+    ede.id AS drug_id,
+    ede.name_of_drug,
+    ede.hcf_amount_claimed AS drug_hcf_claimed,
+    ede.amount_due AS drug_amount_due
+FROM log_enrollees_in lei
+JOIN e_drug_entry ede ON lei.pa_code = ede.pa_code;
+
+// Joining log_enrollees_in with e_procedure_entry:
+SELECT
+    lei.name_of_enrollee,
+    lei.nhia_no,
+    lei.pa_code AS enrollee_pa_code,
+    ese.id AS service_id,
+    ese.name_of_services,
+    ese.hcf_amount_claimed AS service_hcf_claimed,
+    ese.amount_due AS service_amount_due,
+    ede.id AS drug_id,
+    ede.name_of_drug,
+    ede.hcf_amount_claimed AS drug_hcf_claimed,
+    ede.amount_due AS drug_amount_due
+FROM log_enrollees_in lei
+LEFT JOIN e_service_entry ese ON lei.pa_code = ese.pa_code
+LEFT JOIN e_drug_entry ede ON lei.pa_code = ede.pa_code;
+
+
+
+
+?>

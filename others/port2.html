@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix-Adewale - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-gray-800 text-white p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">Felix Adewale</a>
+            <ul class="flex space-x-4">
+                <li><a href="#hero" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#services" class="hover:text-gray-300">Services</a></li>
+                <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+                <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="bg-gray-200 py-20 text-center">
+        <div class="container mx-auto">
+            <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-8">
+                <img src="uploads/ProfileImage2.png" alt="Your Name" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-4xl font-bold mb-4">Hello, I'm Felix Adewale</h1>
+            <p class="text-xl">I'm a <span class="typed text-blue-600"></span> Developer.</p>
+        </div>
+    </section>
+
+    <section id="services" class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fas fa-code fa-3x mb-4 text-blue-600"></i>
+                    <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, jQuery, React.js</p>
+                </div>
+                <div class="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fas fa-database fa-3x mb-4 text-green-600"></i>
+                    <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
+                    <p>PHP, MySQL</p>
+                </div>
+                <div class="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fas fa-paint-brush fa-3x mb-4 text-purple-600"></i>
+                    <h3 class="text-xl font-semibold mb-2">UI/UX & Frameworks</h3>
+                    <p>Bootstrap, TailwindCSS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-gray-200 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project 1 Title</h3>
+                        <p>Short description of Project 1.</p>
+                        <a href="#" class="inline-block mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">View Project</a>
+                    </div>
+                </div>
+                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="project2.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project 2 Title</h3>
+                        <p>Short description of Project 2.</p>
+                        <a href="#" class="inline-block mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">View Project</a>
+                    </div>
+                </div>
+                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="project3.jpg" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project 3 Title</h3>
+                        <p>Short description of Project 3.</p>
+                        <a href="#" class="inline-block mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+            <div class="max-w-md mx-auto">
+                <form class="space-y-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-3 border rounded">
+                    <input type="email" placeholder="Your Email" class="w-full p-3 border rounded">
+                    <textarea placeholder="Your Message" class="w-full p-3 border rounded" rows="4"></textarea>
+                    <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white text-center p-4">
+        <p>&copy; 2024 Felix_Adewale. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof Typed !== 'undefined') {
+                var typed = new Typed('.typed', {
+                    strings: ["Frontend = HTML, CSS, JavaScript, jQuery, React.js", "Backend = PHP, MySQL", "Bootstrap and TailwindCSS"],
+                    typeSpeed: 50,
+                    backSpeed: 25,
+                    loop: true
+                });
+            } else {
+                console.error("Typed.js library not found. Ensure it's correctly included.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+-- Step 1: Create the database
+CREATE DATABASE IF NOT EXISTS healthcare_db;
+USE healthcare_db;
+
+-- Step 2: Create the parent table (log_enrollees_in)
+CREATE TABLE log_enrollees_in (
+      name_of_enrollee VARCHAR(255) NOT NULL,
+      nhia_no VARCHAR(255) NOT NULL;
+    sex VARCHAR(10) NOT NULL,
+    phone_no VARCHAR(20) NOT NULL,
+    pa_code VARCHAR(255) UNIQUE NOT NULL,
+    rpimary_hospital VARCHAR(255) NOT NULL,
+    primary_hospital_code VARCHAR(255) NOT NULL,
+    secondary_hospital VARCHAR(255) NOT NULL,
+    secondary_hospital_code VARCHAR(255) NOT NULL,
+    diagnosis VARCHAR(255) NOT NULL,
+    procedure_text VARCHAR(255) NOT NULL,
+    further_diagnosis VARCHAR(255) NOT NULL,
+    staff_id VARCHAR(255) NOT NULL,
+    created_on TIMESTAMP
+);
+
+-- Step 3: Create the child table (e_service_entry)
+CREATE TABLE e_service_entry (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name_of_service VARCHAR(255) NOT NULL,
+    nhia_tariff DECIMAL(10, 2) NOT NULL,
+    hcf_amount_claimed DECIMAL(10, 2) NOT NULL,
+    amount_due DECIMAL(10, 2) NOT NULL,
+    qty DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    remarks VARCHAR(255),
+    pa_code VARCHAR(255) NOT NULL,
+    FOREIGN KEY (pa_code) REFERENCES log_enrollees_in(pa_code)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+-- Step 4: Create the child table (e_drug_entry)
+CREATE TABLE e_drug_entry (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name_of_drug VARCHAR(255) NOT NULL,
+    nhia_tariff DECIMAL(10, 2) NOT NULL,
+    hcf_amount_claimed DECIMAL(10, 2) NOT NULL,
+    amount_due DECIMAL(10, 2) NOT NULL,
+    qty DECIMAL(10, 2) NULL,
+    tenPercent DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    remarks VARCHAR(255),
+    pa_code VARCHAR(255) NOT NULL,
+    FOREIGN KEY (pa_code) REFERENCES log_enrollees_in(pa_code)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+-- Step 5: Add indexes for scalability
+CREATE INDEX idx_pa_code_log ON log_enrollees_in(pa_code);
+CREATE INDEX idx_pa_code_service ON e_service_entry(pa_code);
+CREATE INDEX idx_pa_code_drug ON e_drug_entry(pa_code);
